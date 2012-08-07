@@ -1,7 +1,7 @@
 $(function() {
     // CSS
-    var stylesheet = document.createElement("style");
-    stylesheet.innerText = ".kippt-save-button {\
+    var styleElement = document.createElement("style");
+    var styleText = document.createTextNode(".kippt-save-button {\
                     background:url(http://addons.kippt.com/save-button/img/kippt-btn.png) no-repeat;\
                     height:20px;\
                     width:62px;\
@@ -17,11 +17,11 @@ $(function() {
                 }\
                 .kippt-save-button span {\
                     display: none;\
-                }";
+                }");
 
-    document.getElementsByTagName("head")[0].appendChild(stylesheet);
+    styleElement.appendChild(styleText);
+    document.getElementsByTagName("head")[0].appendChild(styleElement);
     
-
     var listener = function(e) {
         e.preventDefault();
         var elem = e.currentTarget;
