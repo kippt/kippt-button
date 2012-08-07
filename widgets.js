@@ -18,9 +18,11 @@
         background-position: 0 -60px;\
     }";
     
-    var style = document.createElement("style");
-    style.innerHTML = css;
-    document.head.appendChild(style);
+    var styleElement = document.createElement("style"),
+        styleText = document.createTextNode(css);
+    
+    styleElement.appendChild(styleText);
+    document.head.appendChild(styleElement);
     
     var saveButtons = document.querySelectorAll(".kippt-save-button");
     saveButtons = [].slice.call(saveButtons);
