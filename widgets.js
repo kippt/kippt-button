@@ -47,8 +47,19 @@ $(function() {
             element.attachEvent('on' + type, callback);
         }
     };
+
+    // IE 8 getElementsByClassName, see http://stackoverflow.com/questions/7410949
+    var findByClassName = function getElementsByClassName(className) {
+        if (document.getElementsByClassName) {
+            return document.getElementsByClassName(className);
+        } else {
+            // IE 8
+            return document.querySelectorAll('.' + className);
+        }
+    };
+
     // Loading
-    var buttons = document.getElementsByClassName("kippt-save-button");
+    var buttons = findByClassName("kippt-save-button");
     for (var i = 0; i < buttons.length; i++) {
         var button = buttons[i];
         button.innerHTML = "<span>Save to Kippt</span>";
