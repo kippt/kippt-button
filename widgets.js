@@ -40,7 +40,9 @@ $(function() {
             via = encodeURIComponent(elem.getAttribute("via"));
 
         var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
-        window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
+
+        // IE 8 does not allow dash in window name, see http://stackoverflow.com/questions/710756
+        window.open(windowUrl, "kippt_popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
         return false;
     };
     var addEventListener = function(element, type, callback) {
