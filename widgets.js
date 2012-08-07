@@ -33,6 +33,13 @@ $(function() {
         var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
         window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
     };
+    var addEventListener = function(element, type, callback) {
+        if (element.addEventListener) {
+            element.addEventListener(type, callback, false);
+        } else if (element.attachEvent) {
+            element.attachEvent('on' + type, callback);
+        }
+    };
     // Loading
     var buttons = document.getElementsByClassName("kippt-save-button");
     for (var i = 0; i < buttons.length; i++) {
@@ -40,6 +47,6 @@ $(function() {
         button.innerHTML = "<span>Save to Kippt</span>";
 
         // Handle click
-        button.addEventListener("click", listener);
+        addEventListener(button, "click", listener);
     }
 });
