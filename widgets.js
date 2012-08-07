@@ -22,10 +22,12 @@ $(function() {
     document.getElementsByTagName("head")[0].appendChild(stylesheet);
     
     // Loading
-    $(".kippt-save-button").each(function(i, elem){
-        $(elem).html("<span>Save to Kippt</span>")
-    });
-    
+    var buttons = document.getElementsByClassName("kippt-save-button");
+    for (var i = 0; i < buttons.length; i++) {
+        var button = buttons[i];
+        button.innerHTML = "<span>Save to Kippt</span>";
+    }
+
     // Handle click
     $(".kippt-save-button").on("click", function(e){
         e.preventDefault();
