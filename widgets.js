@@ -1,6 +1,7 @@
 $(function() {
     // CSS
-    var css = ".kippt-save-button {\
+    var stylesheet = document.createElement("style");
+    stylesheet.innerText = ".kippt-save-button {\
                     background:url(http://addons.kippt.com/save-button/img/kippt-btn.png) no-repeat;\
                     height:20px;\
                     width:62px;\
@@ -17,7 +18,8 @@ $(function() {
                 .kippt-save-button span {\
                     display: none;\
                 }";
-    $("head").append("<style>"+css+"</style>");
+
+    document.getElementsByTagName("head")[0].appendChild(stylesheet);
     
     // Loading
     $(".kippt-save-button").each(function(i, elem){
