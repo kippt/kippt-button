@@ -1,7 +1,6 @@
 $(function() {
     // CSS
-    var styleElement = document.createElement("style");
-    var styleText = document.createTextNode(".kippt-save-button {\
+    var css = ".kippt-save-button {\
                     background:url(http://addons.kippt.com/save-button/img/kippt-btn.png) no-repeat;\
                     height:20px;\
                     width:62px;\
@@ -17,10 +16,18 @@ $(function() {
                 }\
                 .kippt-save-button span {\
                     display: none;\
-                }");
+                }";
 
-    styleElement.appendChild(styleText);
-    document.getElementsByTagName("head")[0].appendChild(styleElement);
+    // IE8 support, see http://www.xinotes.org/notes/note/964/
+    if (document.createStyleSheet) {
+        document.createStyleSheet().cssText = css;
+    } else {
+        var styleElement = document.createElement("style");
+        var styleText = document.createTextNode(css);
+
+        styleElement.appendChild(styleText);
+        document.getElementsByTagName("head")[0].appendChild(styleElement);
+    }
     
     var listener = function(e) {
         e.preventDefault();
