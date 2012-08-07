@@ -30,8 +30,10 @@ $(function() {
     }
     
     var listener = function(e) {
-        e.preventDefault();
         var elem = e.currentTarget;
+        if (e.preventDefault){
+            e.preventDefault();
+        }
         var url = encodeURIComponent(elem.dataset.url),
             title = encodeURIComponent(elem.dataset.title),
             source = encodeURIComponent(elem.dataset.source),
@@ -39,6 +41,7 @@ $(function() {
 
         var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
         window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
+        return false;
     };
     var addEventListener = function(element, type, callback) {
         if (element.addEventListener) {
