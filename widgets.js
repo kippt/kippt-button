@@ -34,10 +34,10 @@ $(function() {
             e.preventDefault();
         }
         var elem = e.currentTarget || e.srcElement; /* IE 8, see http://stackoverflow.com/questions/2642095 */
-        var url = encodeURIComponent(elem.dataset.url),
-            title = encodeURIComponent(elem.dataset.title),
-            source = encodeURIComponent(elem.dataset.source),
-            via = encodeURIComponent(elem.dataset.via);
+        var url = encodeURIComponent(elem.getAttribute("data-url")), // for IE 8 support, don't use elem.dataset
+            title = encodeURIComponent(elem.getAttribute("data-title")),
+            source = encodeURIComponent(elem.getAttribute("source")),
+            via = encodeURIComponent(elem.getAttribute("via"));
 
         var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
         window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
