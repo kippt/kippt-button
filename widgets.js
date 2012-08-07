@@ -30,10 +30,10 @@ $(function() {
     }
     
     var listener = function(e) {
-        var elem = e.currentTarget;
         if (e.preventDefault){
             e.preventDefault();
         }
+        var elem = e.currentTarget || e.srcElement; /* IE 8, see http://stackoverflow.com/questions/2642095 */
         var url = encodeURIComponent(elem.dataset.url),
             title = encodeURIComponent(elem.dataset.title),
             source = encodeURIComponent(elem.dataset.source),
