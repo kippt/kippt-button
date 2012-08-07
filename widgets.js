@@ -26,18 +26,18 @@ $(function() {
     for (var i = 0; i < buttons.length; i++) {
         var button = buttons[i];
         button.innerHTML = "<span>Save to Kippt</span>";
-    }
 
-    // Handle click
-    $(".kippt-save-button").on("click", function(e){
-        e.preventDefault();
-        var elem = e.currentTarget;
-        var url = encodeURIComponent(elem.dataset.url),
-            title = encodeURIComponent(elem.dataset.title),
-            source = encodeURIComponent(elem.dataset.source),
-            via = encodeURIComponent(elem.dataset.via);
-        
-        var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
-        window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
-    });
+        // Handle click
+        button.addEventListener("click", function(e) {
+            e.preventDefault();
+            var elem = e.currentTarget;
+            var url = encodeURIComponent(elem.dataset.url),
+                title = encodeURIComponent(elem.dataset.title),
+                source = encodeURIComponent(elem.dataset.source),
+                via = encodeURIComponent(elem.dataset.via);
+
+            var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
+            window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
+        });
+    }
 });
