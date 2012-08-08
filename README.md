@@ -19,7 +19,7 @@ You can install the "Save to Kippt" button to any site without the code on this 
 And format links the following way:
 
 ```html
-<a href="https://kippt.com/save" class="kippt-save-button" data-url="https://kippt.com/karrisaarinen/" data-title="Karri Saarinen on Kippt" data-source="example.com">Save to Kippt</a>
+<a href="https://kippt.com/save" class="kippt-save-button" data-url="https://kippt.com/karrisaarinen/" data-title="Karri Saarinen on Kippt" data-source="example.com">Save</a>
 ```
 
 Attributes:
