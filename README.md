@@ -21,11 +21,6 @@ Attributes:
 - _data-source_ - (Optional) Source, e.g. page domain
 - _data-via_ - (Optional) Source clip URI if you want to reference another clip inside Kippt (e.g. /api/clips/1337/)
 
-## Requirements
-
-- jQuery / Zepto
-
 ## TODO
 
-- Remove $ dependency
 - Add HTTPS enabled CDN
