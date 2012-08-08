@@ -18,24 +18,16 @@
         background-position: 0 -60px;\
     }";
     
-    var styleElement = document.createElement("style"),
-        styleText = document.createTextNode(css);
+    function injectCSS() {
+        var styleElement = document.createElement("style"),
+            styleText = document.createTextNode(css);
+        
+        styleElement.appendChild(styleText);
+        document.head.appendChild(styleElement);
+    }
     
-    styleElement.appendChild(styleText);
-    document.head.appendChild(styleElement);
-    
-    var saveButtons = document.querySelectorAll(".kippt-save-button");
-    saveButtons = [].slice.call(saveButtons);
-    
-    saveButtons.forEach(function (el) {
-        el.innerHTML = "";
-    });
-    
-    var popupFeatures = "location=no,menubar=no,status=no,titlebar=no," +
-        "scrollbars=no,width=420,height=192";
-    
-    function onClick(e) {
-        if (saveButtons.indexOf(e.target) !== -1) {
+    function onButtonClick(e) {
+        if (buttons.indexOf(e.target) !== -1) {
             e.preventDefault();
             
             var data = e.target.dataset;
@@ -45,16 +37,27 @@
             }
             
             var windowURL = "https://kippt.com/extensions/new" +
-                "?url=" + data.url +
-                "&title=" + data.title +
-                "&source=" + data.source +
-                "&via=" + data.via;
+                            "?url=" + data.url +
+                            "&title=" + data.title +
+                            "&source=" + data.source +
+                            "&via=" + data.via;
             
             window.open(windowURL, "kippt-popup", popupFeatures);
         }
     }
     
-    saveButtons.forEach(function (el) {
-        el.addEventListener("click", onClick, false);
-    });
+    function addClickListeners() {
+        buttons.forEach(function (btn) {
+            btn.addEventListener("click", onButtonClick, false);
+        });
+    }
+    
+    var popupFeatures = "location=no,menubar=no,status=no,titlebar=no," +
+                        "scrollbars=no,width=420,height=192";
+    
+    var buttons = document.querySelectorAll(".kippt-save-button");
+    buttons = [].slice.call(buttons);
+    
+    injectCSS();
+    addClickListeners();
 })();
