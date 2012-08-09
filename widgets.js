@@ -44,14 +44,12 @@
         color: #404040;\
         display: inline-block;\
         font: bold 12px Arial, sans-serif;\
-        height: 20px;\
         left: 18px;\
         line-height: 18px;\
         position: relative;\
         text-align: center;\
         text-decoration: none;\
         text-shadow: #fff 0 1px 0;\
-        top: 0;\
         -webkit-user-select: none;\
         -moz-user-select: none;\
         -ms-user-select: none;\
@@ -70,12 +68,9 @@
         border: inherit;\
         border-radius: 3px 0 0 3px;\
         border-right-color: #d9d9d9;\
-        box-sizing: inherit;\
         content: 'k';\
         color: #dc3410;\
-        display: inherit;\
         font-size: 14px;\
-        height: inherit;\
         left: -19px;\
         top: -1px;\
         position: absolute;\
