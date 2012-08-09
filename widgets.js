@@ -46,7 +46,7 @@
         box-sizing: border-box;\
         color: #404040;\
         display: inline-block;\
-        font: bold 12px sans-serif;\
+        font: bold 12px Arial, sans-serif;\
         height: 20px;\
         left: 18px;\
         line-height: 18px;\
