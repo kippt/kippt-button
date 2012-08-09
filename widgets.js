@@ -55,7 +55,7 @@
         -ms-user-select: none;\
         -o-user-select: none;\
         user-select: none;\
-        width: 44px;\
+        width: 42px;\
     }\
     .kippt-save-button:active {\
         background: -webkit-linear-gradient(top, #f8f8f8, #fff);\
@@ -71,7 +71,7 @@
         content: 'k';\
         color: #dc3410;\
         font-size: 14px;\
-        left: -19px;\
+        left: -21px;\
         top: -1px;\
         position: absolute;\
         width: 19px;\
