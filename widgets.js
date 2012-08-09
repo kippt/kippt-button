@@ -15,7 +15,7 @@
             
             var data = e.target.dataset;
             
-            for (var key in e.target.dataset) {
+            for (var key in data) {
                 data[key] = encodeURIComponent(data[key]);
             }
             
