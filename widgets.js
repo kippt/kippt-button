@@ -13,19 +13,16 @@
         if (buttons.indexOf(e.target) !== -1) {
             e.preventDefault();
             
-            var data = e.target.dataset;
+            var data = e.target.dataset,
+                popupURL = "https://kippt.com/extensions/new?";
             
             for (var key in data) {
-                data[key] = encodeURIComponent(data[key]);
+                if (USED_DATA.indexOf(key) !== -1) {
+                    popupURL += key + "=" + encodeURIComponent(data[key]) + "&";
+                }
             }
             
-            var windowURL = "https://kippt.com/extensions/new" +
-                            "?url=" + data.url +
-                            "&title=" + data.title +
-                            "&source=" + data.source +
-                            "&via=" + data.via;
-            
-            window.open(windowURL, "kippt-popup", popupFeatures);
+            window.open(popupURL, "kippt-popup", POPUP_FEATURES);
         }
     }
     
@@ -88,8 +85,9 @@
         border-color: #b6b6b6;\
     }";
     
-    var popupFeatures = "location=no,menubar=no,status=no,titlebar=no," +
-                        "scrollbars=no,width=420,height=192";
+    var USED_DATA = ["url", "title", "source", "via"],
+        POPUP_FEATURES = "location=no,menubar=no,status=no,titlebar=no," +
+                         "scrollbars=no,width=420,height=192";
     
     var buttons = document.querySelectorAll(".kippt-save-button");
     buttons = [].slice.call(buttons);
