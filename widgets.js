@@ -2,11 +2,9 @@
     "use strict";
     
     function injectCSS() {
-        var styleElement = document.createElement("style"),
-            styleText = document.createTextNode(css);
-        
-        styleElement.appendChild(styleText);
-        document.head.appendChild(styleElement);
+        var style = document.createElement("style");
+        style.appendChild(document.createTextNode(css));
+        document.head.appendChild(style);
     }
     
     function onButtonClick(e) {
