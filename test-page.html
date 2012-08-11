@@ -1,21 +1,46 @@
-<html>
-<head>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js" charset="utf-8"></script>
-</head>
-<body style="background:whitesmoke; font-family:helvetica; font-size:13px; color:#222; -webkit-font-smoothing:antialiased; line-height:1.3">
-<div style="padding:80px 40px; width:300px; background:#fff; margin:100 auto; box-shadow:0 2px 10px #ddd">    
+<!DOCTYPE html>
+<title>Kippt Button test page</title>
 
-<!-- Kippt Button -->
+<style>
+body {
+    background: whitesmoke;
+    font: 13px/1.3 sans-serif;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+}
 
-    <strong>Lemon drops biscuit applicake</strong>
-    <p>Chocolate cake cupcake topping marzipan. Powder brownie bonbon lemon drops. Cupcake sugar plum faworki jelly beans sugar plum apple pie jelly-o chocolate bar icing.</p>
+#container {
+    padding: 80px 40px;
+    width: 300px;
+    background: #fff;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px #ddd;
+}
+</style>
+
+<div id="container">
+    <h1 style="font-size: 1em">Lemon drops biscuit applicake</h1>
     
-    <p> Donut liquorice cheesecake bonbon cotton candy tart. Oat cake pudding biscuit wafer wypas tiramisu. Carrot cake carrot cake cotton candy sesame snaps jelly-o applicake jelly. </p>
-
-<a href="https://kippt.com/save" class="kippt-save-button" data-url="https://kippt.com/karrisaarinen/" data-title="Karri Saarinen on Kippt" data-source="example.com">Save to Kippt</a>
-
-<script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","kippt-wjs"));</script>
-
+    <p>
+        Chocolate cake cupcake topping marzipan. Powder brownie bonbon lemon
+        drops. Cupcake sugar plum faworki jelly beans sugar plum apple pie
+        jelly-o chocolate bar icing.
+    
+    <p>
+        Donut liquorice cheesecake bonbon cotton candy tart. Oat cake pudding
+        biscuit wafer wypas tiramisu. Carrot cake carrot cake cotton candy
+        sesame snaps jelly-o applicake jelly.
+    
+    <p>
+        <a href="https://kippt.com/save" class="kippt-save-button"
+        data-url="https://kippt.com/karrisaarinen/"
+        data-title="Karri Saarinen on Kippt" data-source="example.com">Save</a>
+        
+        <script>
+        (function() {
+            var s = document.createElement("script");
+            s.src = "widgets.js";
+            document.head.appendChild(s);
+        })();
+        </script>
 </div>
-</body>
-</html>
