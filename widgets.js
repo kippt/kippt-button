@@ -1,7 +1,7 @@
 $(function() {
     // CSS
     var css = ".kippt-save-button {\
-                    background:url(http://addons.kippt.com/save-button/img/kippt-btn.png) no-repeat;\
+                    background:url(https://s3.amazonaws.com/addons.kippt.com/save-button/img/kippt-btn.png) no-repeat;\
                     height:20px;\
                     width:62px;\
                     display:block;\
