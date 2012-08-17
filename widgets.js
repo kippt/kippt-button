@@ -27,11 +27,11 @@ $(function() {
     // Handle click
     $(".kippt-save-button").on("click", function(e){
         e.preventDefault();
-        var elem = e.currentTarget;
-        var url = encodeURIComponent($(elem).data("url")),
-            title= encodeURIComponent($(elem).data("title")),
-            source = encodeURIComponent($(elem).data("source")),
-            via = encodeURIComponent($(elem).data("via"));
+        var elem = $(e.currentTarget);
+        var url = encodeURIComponent(elem.data("url")),
+            title= encodeURIComponent(elem.data("title")),
+            source = encodeURIComponent(elem.data("source")),
+            via = encodeURIComponent(elem.data("via"));
         
         var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
         window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
