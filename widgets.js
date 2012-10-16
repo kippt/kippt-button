@@ -36,9 +36,9 @@ window.onload = function(){ // ie
         // add click event
         button.addEventListener('click', function(e){ // ie
             if (e.preventDefault()){ e.preventDefault(); }
-            var url = button.getAttribute('data-url'), // ie
-                title = button.getAttribute('data-title'),
-                source = button.getAttribute('data-source'),
+            var url = button.getAttribute('data-url') || window.document.location.href, // ie
+                title = button.getAttribute('data-title') || window.document.title,
+                source = button.getAttribute('data-source') || window.document.location.hostname,
                 via = button.getAttribute('data-via');
             var windowUrl = "https://kippt.com/extensions/new?url="+ url +"&title="+ title +"&source="+ source +"&via="+ via;
             window.open(windowUrl, "kippt-popup", "location=no,menubar=no,status=no,titlebar=no,scrollbars=no,width=420,height=192");
